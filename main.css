@@ -16,6 +16,7 @@ body {
   font-size: 16px;
   background-color: hsl(0, 100%, 74%);
   color: #fff;
+  overflow: hidden;
 }
 
 .main-wrapper {
@@ -118,6 +119,10 @@ button {
   font-weight: 600;
 }
 
+.footer:hover {
+  cursor: pointer;
+}
+
 @media only screen and (min-width: 710px) {
   main {
     max-width: 80vw;
@@ -138,7 +143,7 @@ button:hover {
   opacity: 0.9;
 }
 
-.error-text:not(.footer) {
+.error-text {
   color:hsl(0, 100%, 74%);
   font-weight: 500;
   font-size: 0.8rem;

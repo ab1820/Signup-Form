@@ -1,10 +1,10 @@
-const form = document.getElementById('form');
-const fname = document.getElementById('fname');
-const lname = document.getElementById('lname');
-const email = document.getElementById('email');
-const password = document.getElementById('password');
+const form = document.getElementById("form");
+const fname = document.getElementById("fname");
+const lname = document.getElementById("lname");
+const email = document.getElementById("email");
+const password = document.getElementById("password");
 
-form.addEventListener('submit', e => {
+form.addEventListener("submit", (e) => {
   e.preventDefault();
 
   let firstName = fname.value.trim();
@@ -12,39 +12,39 @@ form.addEventListener('submit', e => {
   let emailValue = email.value.trim();
   let passwordValue = password.value.trim();
 
-  if(firstName == '') {
-    errorFunc(fname, 'First Name cannot be empty')
+  if (firstName == "") {
+    errorFunc(fname, "First Name cannot be empty");
   } else {
-    successFunc(fname)
+    successFunc(fname);
   }
 
-  if(lastName == '') {
-    errorFunc(lname, 'Last Name cannot be empty')
+  if (lastName == "") {
+    errorFunc(lname, "Last Name cannot be empty");
   } else {
-    successFunc(lname)
+    successFunc(lname);
   }
 
-  if(emailValue == '') {
-    errorFunc(email, 'Email cannot be empty')
+  if (emailValue == "") {
+    errorFunc(email, "Looks like this is not an email");
   } else {
-    successFunc(email)
+    successFunc(email);
   }
 
-  if(passwordValue == '') {
-    errorFunc(password, 'Password cannot be empty')
+  if (passwordValue == "") {
+    errorFunc(password, "Password cannot be empty");
   } else {
-    successFunc(password)
+    successFunc(password);
   }
 });
 
 function errorFunc(req, message) {
   const formControl = req.parentElement;
-  const span = formControl.querySelectorAll('span');
+  const span = formControl.querySelectorAll("span");
   span.innerText = message;
-  req.className += 'error';
-  span.className += 'error-text';
+  req.className += "error";
+  span.className += "error-text";
 }
 
 function successFunc(req) {
-  req.className += 'success';
+  req.className += "success";
 }
